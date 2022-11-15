@@ -6,18 +6,11 @@ from pymongo import MongoClient
 client = MongoClient('mongodb+srv://test:sparta@cluster0.c4jurvw.mongodb.net/Cluster0?retryWrites=true&w=majority')
 db = client.dbsparta
 
-
-
 @app.route('/')
 def home():
     return render_template('index.html')
 
-<<<<<<< HEAD
-@app.route('/asher')
-=======
-
 @app.route("/asher")
->>>>>>> 2d9ce1580aae2a1b44a108a5f6ea965d6f33f311
 def asher():
     return render_template("asher-landing.html");
 
