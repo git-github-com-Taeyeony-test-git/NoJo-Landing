@@ -12,11 +12,12 @@ def home():
 
 @app.route("/asher")
 def asher():
-    return render_template("asher-landing.html");
+    return render_template("asher-landing.html")
 
 @app.route("/JungMin")
 def JungMin():
     return render_template('Jungmin.html')
+
 
 @app.route("/api/asher/comment", methods=["POST"])
 def comment_post():
