@@ -1,0 +1,357 @@
+body {
+    height: 100vh;
+    background-color: #f1f3f5;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+textarea:focus {
+    outline: none;
+}
+button:focus {
+    outline: none;
+}
+input:focus {
+    outline: none;
+}
+
+.displaynone {
+    display: none;
+}
+
+.member-card-wrap {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1.5rem;
+}
+
+.member-card {
+    width: 700px;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 25px;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: 1s;
+}
+
+.member-card-back {
+    width: 700px;
+    height: 100%;
+    display: none;
+    background-color: #ffffff;
+    border-radius: 25px;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+}
+
+.member-card-back .content-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.mbti {
+    padding: 0 2rem;
+}
+
+.mbti .mbti-title {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.mbti .mbti-subtitle {
+    font-weight: bold;
+    font-size: 1.825rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.mbti .mbti-subtitle .mbti-mymbti-sub {
+    font-size: 1.5rem;
+    color: grey;
+}
+
+.mbti .mbti-desc {
+    font-size: 1rem;
+}
+
+.pros {
+    padding: 0 2rem;
+}
+
+.pros .pros-title {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.my-working-style {
+    padding: 0 2rem;
+}
+
+.my-working-style .my-working-style-title {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.card-top {
+    border-radius: 25px 25px 0 0;
+    background: linear-gradient(to right, yellow, red);
+    width: 100%;
+    height: 50px;
+}
+
+.card-bottom {
+    border-radius: 0 0 25px 25px;
+    background: linear-gradient(to right, yellow, red);
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    font-weight: bold;
+}
+
+.card-bottom .arrow-button {
+    background: none;
+    border: none;
+}
+
+.card-bottom .arrow-button img {
+    width: 40px;
+}
+
+.card-mark {
+    height: 70px;
+    margin-top: 2rem;
+}
+
+.card-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-image {
+    height: 400px;
+    border-radius: 25px;
+    margin-top: 2rem;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+.member-name {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.member-name .track {
+    font-size: 1.25rem;
+}
+
+.member-name .name {
+    font-size: 2.5rem;
+}
+
+.member-contact {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 2rem 0 1rem 0;
+}
+
+.comment-list {
+    width: 700px;
+    height: 100%;
+    border-radius: 25px;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    box-sizing: border-box;
+    background: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-title {
+    text-align: center;
+    font-weight: bold;
+    padding: 2rem;
+}
+
+.comment-title .title {
+    font-size: 2.5rem;
+}
+
+.comment-input {
+    width: 90%;
+}
+
+.comment-input .comment-name-input {
+    width: 30%;
+    margin-bottom: 1rem;
+    background: none;
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.comment-input textarea {
+    width: 100%;
+    resize: none;
+    background: none;
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.comment-btn-wrap {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment-btn {
+    background: red;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.comment-list-data-wrap {
+    width: 90%;
+    overflow-y: scroll;
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+.comment-list-data {
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    margin: 1rem 0;
+    border-radius: 10px;
+    padding: 1.25rem;
+}
+
+.comment-list-data .comment-list-data-name {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .wrap {
+        padding: 1rem;
+    }
+
+    .member-card,
+    .commnet-list {
+        width: 100%;
+    }
+
+    .profile-image {
+        height: 200px;
+    }
+
+    .mbti {
+        padding: 0 1rem;
+    }
+
+    .mbti-title {
+        font-size: 1rem !important;
+    }
+
+    .mbti-subtitle .mbti-mymbti {
+        font-size: 0.825rem !important;
+    }
+
+    .mbti-subtitle .mbti-mymbti-sub {
+        font-size: 0.75rem !important;
+    }
+
+    .mbti-desc {
+        font-size: 0.5rem !important;
+    }
+
+    .pros {
+        padding: 0 1rem;
+    }
+
+    .pros-title {
+        font-size: 1rem !important;
+    }
+
+    .pros-list {
+        font-size: 0.5rem !important;
+    }
+
+    .my-working-style {
+        padding: 0 1rem;
+    }
+
+    .my-working-style-title {
+        font-size: 1rem !important;
+    }
+
+    .my-working-style-desc {
+        font-size: 0.5rem !important;
+    }
+
+    .comment-title {
+        padding: 1rem;
+    }
+
+    .comment-title .title {
+        font-size: 1.5rem;
+    }
+
+    .comment-input .comment-name-input {
+        padding: 0.5rem;
+    }
+
+    .comment-input textarea {
+        padding: 0.5rem;
+    }
+
+    .comment-list-data {
+        padding: 0.5rem;
+    }
+
+    .comment-list-data .comment-list-data-name {
+        font-size: 0.825rem;
+    }
+
+    .comment-list-data .comment-list-data-content {
+        font-size: 0.75rem;
+    }
+}
