@@ -21,12 +21,13 @@
 
     <link
             rel="stylesheet"
-            href="../static/JungMin-static/styles/asher-landing.css"
+            href="../static/JungMin-static/styles/JungMin.css"
     />
 
     <script>
-        let isOpen = false;
         $(document).ready(function () {
+            show_comment();
+             let isOpen = false;
             $(".arrow-button").on("click", function () {
                 if (isOpen == false) {
                     $(".member-card-back").fadeIn(500);
@@ -40,6 +41,47 @@
                 $("html, body").animate({scrollTop: offset.top}, 1000);
             });
         });
+    </script>
+
+    <script>
+        function save_comment() {
+            let name = $("#comment-name").val();
+            let comment = $("#comment").val();
+            $.ajax({
+                type: "POST",
+                url: "/api/JungMin/comment",
+                data: {name_give: name, comment_give: comment},
+                success: function (response) {
+                    alert(response["msg"])
+                    window.location.reload();
+                }
+            })
+        }
+
+        function show_comment() {
+            $.ajax({
+                type: "GET",
+                url: "/api/JungMin/comment",
+                data: {},
+                success: function (response) {
+                    let rows = response["comments"];
+
+                    for (let i = 0; i < rows.length; i++) {
+                        let name = rows[i]['name'];
+                        let comment = rows[i]['comment'];
+
+                        let temp_html = `
+                                            <div class="comment-list-data">
+                                                <div class="comment-list-data-name">${name}</div>
+                                                <div class="comment-list-data-content">${comment}</div>
+                                            </div>
+                                         `;
+
+                        $("#comment-list-data-wrap").append(temp_html);
+                    }
+                }
+            })
+        }
     </script>
 
     <title>Document</title>
@@ -156,9 +198,15 @@
                     placeholder="내용"
             ></textarea>
             <div class="comment-btn-wrap">
-                <button class="comment-btn">등록</button>
+                <button class="comment-btn" onclick="save_comment()">
+                    등록
+                </button>
             </div>
         </div>
+        <div
+                id="comment-list-data-wrap"
+                class="comment-list-data-wrap"
+        ></div>
     </div>
 </div>
 </body>

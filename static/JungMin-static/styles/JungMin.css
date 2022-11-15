@@ -12,6 +12,16 @@ p {
     margin: 0;
 }
 
+textarea:focus {
+    outline: none;
+}
+button:focus {
+    outline: none;
+}
+input:focus {
+    outline: none;
+}
+
 .displaynone {
     display: none;
 }
@@ -49,10 +59,13 @@ p {
     background-color: #ffffff;
     border-radius: 25px;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+}
 
+.member-card-back .content-wrap {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
 }
 
 .mbti {
@@ -185,6 +198,7 @@ p {
 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -206,7 +220,9 @@ p {
     width: 30%;
     margin-bottom: 1rem;
     background: none;
-    border: 2px solid red;
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
     border-radius: 10px;
     padding: 1rem;
 }
@@ -215,7 +231,9 @@ p {
     width: 100%;
     resize: none;
     background: none;
-    border: 2px solid red;
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
     border-radius: 10px;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -232,6 +250,26 @@ p {
     border: none;
     padding: 0.5rem 0.75rem;
     border-radius: 10px;
+    font-weight: bold;
+}
+
+.comment-list-data-wrap {
+    width: 90%;
+    overflow-y: scroll;
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+.comment-list-data {
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    margin: 1rem 0;
+    border-radius: 10px;
+    padding: 1.25rem;
+}
+
+.comment-list-data .comment-list-data-name {
     font-weight: bold;
 }
 
