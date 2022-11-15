@@ -12,9 +12,18 @@ db = client.dbsparta
 def home():
     return render_template('index.html')
 
+<<<<<<< HEAD
 @app.route('/asher')
+=======
+
+@app.route("/asher")
+>>>>>>> 2d9ce1580aae2a1b44a108a5f6ea965d6f33f311
 def asher():
     return render_template("asher-landing.html");
+
+@app.route("/JungMin")
+def JungMin():
+    return render_template('Jungmin.html')
 
 @app.route("/api/asher/comment", methods=["POST"])
 def comment_post():
