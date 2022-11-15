@@ -11,7 +11,6 @@ db = client.dbsparta
 def home():
     return render_template('index.html')
 
-
 @app.route("/asher")
 def asher():
     return render_template("asher-landing.html");

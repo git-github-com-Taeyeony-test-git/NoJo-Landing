@@ -1,32 +1,24 @@
-body {
-    height: 100vh;
-    background-color: #f1f3f5;
-    margin: 0;
-    padding: 0;
-
-    font-family: "Ansungtangmyun-Bold";
-}
-
 @font-face {
-    font-family: "Ansungtangmyun-Bold";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/Ansungtangmyun-Bold.woff2")
-        format("woff2");
+    font-family: 'UhBeemysen';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeemysen.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
-p {
-    margin: 0;
+* {
+    font-family: 'UhBeemysen';
 }
 
-textarea:focus {
-    outline: none;
+body {
+
+    height: 100vh;
+    background-color: #f1f3f5;
+    margin: 0;
+    padding: 0;
 }
-button:focus {
-    outline: none;
-}
-input:focus {
-    outline: none;
+
+p {
+    margin: 0;
 }
 
 .displaynone {
@@ -48,7 +40,7 @@ input:focus {
 .member-card {
     width: 700px;
     height: 100%;
-    background-color: #ffffff;
+    background-color: #FBF8EF;
     border-radius: 25px;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
 
@@ -59,24 +51,26 @@ input:focus {
     transition: 1s;
 }
 
+.member-contact {
+    color: dimgray;
+}
+
 .member-card-back {
     width: 700px;
     height: 100%;
     display: none;
-    background-color: #ffffff;
+    background-color: #FBF8EF;
     border-radius: 25px;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
-}
 
-.member-card-back .content-wrap {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
 }
 
 .mbti {
-    padding: 0 2rem;
+    padding: 0 2.5rem;
+    text-align: center;
 }
 
 .mbti .mbti-title {
@@ -98,11 +92,20 @@ input:focus {
 }
 
 .mbti .mbti-desc {
-    font-size: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: dimgray;
 }
 
 .pros {
     padding: 0 2rem;
+    text-align: center;
+}
+
+.pros-list {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: dimgray;
 }
 
 .pros .pros-title {
@@ -113,6 +116,13 @@ input:focus {
 
 .my-working-style {
     padding: 0 2rem;
+    text-align: center;
+}
+
+.my-working-style-desc {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: dimgray;
 }
 
 .my-working-style .my-working-style-title {
@@ -123,14 +133,14 @@ input:focus {
 
 .card-top {
     border-radius: 25px 25px 0 0;
-    background: linear-gradient(to right, yellow, red);
+    background: linear-gradient(to right, mediumslateblue, lavender);
     width: 100%;
     height: 50px;
 }
 
 .card-bottom {
     border-radius: 0 0 25px 25px;
-    background: linear-gradient(to right, yellow, red);
+    background: linear-gradient(to right, lavender, mediumslateblue);
     width: 100%;
     height: 50px;
 
@@ -148,6 +158,7 @@ input:focus {
 
 .card-bottom .arrow-button img {
     width: 40px;
+    color: white;
 }
 
 .card-mark {
@@ -200,11 +211,10 @@ input:focus {
     border-radius: 25px;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     box-sizing: border-box;
-    background: white;
+    background: #FBF8EF;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -216,6 +226,7 @@ input:focus {
 
 .comment-title .title {
     font-size: 2.5rem;
+    color: dimgray;
 }
 
 .comment-input {
@@ -225,10 +236,8 @@ input:focus {
 .comment-input .comment-name-input {
     width: 30%;
     margin-bottom: 1rem;
-    background: none;
-    border: none;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    background: linear-gradient(to bottom, lavender, #FBF8EF);
+    border: 2px solid lightgray;
     border-radius: 10px;
     padding: 1rem;
 }
@@ -236,13 +245,17 @@ input:focus {
 .comment-input textarea {
     width: 100%;
     resize: none;
-    background: none;
-    border: none;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    background: linear-gradient(to top, #FBF8EF, lavender);
+    border: 2px solid lightgray;
     border-radius: 10px;
     padding: 1rem;
     margin-bottom: 1rem;
+}
+
+.comment-input {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: dimgray;
 }
 
 .comment-btn-wrap {
@@ -251,31 +264,12 @@ input:focus {
 }
 
 .comment-btn {
-    background: red;
-    color: #ffffff;
+    background: mediumslateblue;
+    color: white;
     border: none;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 1rem;
     border-radius: 10px;
-    font-weight: bold;
-}
-
-.comment-list-data-wrap {
-    width: 90%;
-    overflow-y: scroll;
-    margin-top: 1rem;
-    padding: 0.5rem;
-}
-
-.comment-list-data {
-    border: none;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-        rgba(17, 17, 26, 0.05) 0px 8px 32px;
-    margin: 1rem 0;
-    border-radius: 10px;
-    padding: 1.25rem;
-}
-
-.comment-list-data .comment-list-data-name {
+    font-size: 1.3rem;
     font-weight: bold;
 }
 
@@ -351,17 +345,5 @@ input:focus {
 
     .comment-input textarea {
         padding: 0.5rem;
-    }
-
-    .comment-list-data {
-        padding: 0.5rem;
-    }
-
-    .comment-list-data .comment-list-data-name {
-        font-size: 0.825rem;
-    }
-
-    .comment-list-data .comment-list-data-content {
-        font-size: 0.75rem;
     }
 }
