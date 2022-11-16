@@ -312,7 +312,7 @@ p {
 }
 
 .comment-list-data-wrap::-webkit-scrollbar-track {
-    background: white; (33, 122, 244, .1);
+    background: white;
 }
 
 @media (max-width: 768px) {
