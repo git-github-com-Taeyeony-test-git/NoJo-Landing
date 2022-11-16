@@ -58,9 +58,6 @@ input:focus {
     background-color: #e3e4f1;
     border-radius: 25px;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .member-card-back .content-wrap {
