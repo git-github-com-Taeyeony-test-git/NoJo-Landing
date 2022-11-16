@@ -1,6 +1,5 @@
 $(document).ready(function () {
     show_comment();
-
     let isOpen = false;
     $(".arrow-button").on("click", function () {
         if (isOpen == false) {
@@ -22,7 +21,7 @@ function save_comment() {
     $.ajax({
         type: "POST",
         url: "/api/JungMin/comment",
-        data: { name_give: 'name', comment_give: 'comment' },
+        data: { name_give: name, comment_give: comment },
         success: function (response) {
             alert(response["msg"])
             window.location.reload();
@@ -43,11 +42,11 @@ function show_comment() {
                 let comment = rows[i]['comment'];
 
                 let temp_html = `
-                    <div class="comment-list-data">
-                        <div class="comment-list-data-name">${name}</div>
-                        <div class="comment-list-data-content">${comment}</div>
-                    </div>
-                `;
+                                <div class="comment-list-data">
+                                    <div class="comment-list-data-name">${name}</div>
+                                    <div class="comment-list-data-content">${comment}</div>
+                                </div>
+                                `;
 
                 $("#comment-list-data-wrap").append(temp_html);
             }

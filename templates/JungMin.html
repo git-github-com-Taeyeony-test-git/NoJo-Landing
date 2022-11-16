@@ -24,69 +24,12 @@
             href="../static/JungMin-static/styles/JungMin.css"
     />
 
-    <script>
-        $(document).ready(function () {
-            show_comment();
-             let isOpen = false;
-            $(".arrow-button").on("click", function () {
-                if (isOpen == false) {
-                    $(".member-card-back").fadeIn(500);
-                    isOpen = true;
-                } else {
-                    $(".member-card-back").fadeOut(500);
-                    isOpen = false;
-                }
-
-                let offset = $(".member-card-back").offset();
-                $("html, body").animate({scrollTop: offset.top}, 1000);
-            });
-        });
-    </script>
-
-    <script>
-        function save_comment() {
-            let name = $("#comment-name").val();
-            let comment = $("#comment").val();
-            $.ajax({
-                type: "POST",
-                url: "/api/JungMin/comment",
-                data: {name_give: name, comment_give: comment},
-                success: function (response) {
-                    alert(response["msg"])
-                    window.location.reload();
-                }
-            })
-        }
-
-        function show_comment() {
-            $.ajax({
-                type: "GET",
-                url: "/api/JungMin/comment",
-                data: {},
-                success: function (response) {
-                    let rows = response["comments"];
-
-                    for (let i = 0; i < rows.length; i++) {
-                        let name = rows[i]['name'];
-                        let comment = rows[i]['comment'];
-
-                        let temp_html = `
-                                            <div class="comment-list-data">
-                                                <div class="comment-list-data-name">${name}</div>
-                                                <div class="comment-list-data-content">${comment}</div>
-                                            </div>
-                                         `;
-
-                        $("#comment-list-data-wrap").append(temp_html);
-                    }
-                }
-            })
-        }
-    </script>
+    <script defer src="../static/Jungmin-static/js/JungMin.js"></script>
+        <script></script>
 
     <style type="text/css">
-        a:link { color: black; text-decoration: none;}
-        a:visited { color: black; }
+        a:link { color: black; text-decoration-color: gray;}
+        a:visited { color: gray; }
     </style>
 
     <title>Document</title>
@@ -114,7 +57,7 @@
         <div class="member-contact">
             <p class="email">📫 cvy5375@gmail.com</p>
             <p class="github">🛠 github.com/ByunJungMin</p>
-            <p class="blog">📔 <a href="https://cvy5375.tistory.com/" target="_blank">cvy5375.tistory.com</a></p>
+            <p class="blog">📔 <a class="blog-link" href="https://cvy5375.tistory.com/" target="_blank">cvy5375.tistory.com</a></p>
         </div>
         <div class="card-bottom">
             <span>소개보기</span>
@@ -180,9 +123,9 @@
                 나의 플레이 리스트
             </div>
             <div>
-                <iframe width="250" height="150" src="https://www.youtube.com/embed/bIQqP19lT1c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="250" height="130" src="https://www.youtube.com/embed/bIQqP19lT1c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             
-                <iframe width="250" height="150" src="https://www.youtube.com/embed/VOmIplFAGeg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="250" height="130" src="https://www.youtube.com/embed/VOmIplFAGeg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <div class="card-bottom"></div>
