@@ -132,7 +132,7 @@ def Taeyeon_comment_post():
 
     return jsonify({'msg': '등록완료'})
 
-@app.route("/api/JungMin/comment", methods=["GET"])
+@app.route("/api/Taeyeon/comment", methods=["GET"])
 def Taeyeon_comment_get():
     
     comment_list = list(db.Taeyeon_comment.find({}, {'_id': False}))
