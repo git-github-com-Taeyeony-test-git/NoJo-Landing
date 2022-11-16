@@ -21,7 +21,7 @@ function save_comment() {
     let comment = $("#comment").val();
     $.ajax({
         type: "POST",
-        url: "/api/asher/comment",
+        url: "/api/jiyoung/comment",
         data: { name_give: name, comment_give: comment },
         success: function (response) {
             alert(response["msg"])
@@ -33,7 +33,7 @@ function save_comment() {
 function show_comment() {
     $.ajax({
         type: "GET",
-        url: "/api/asher/comment",
+        url: "/api/jiyoung/comment",
         data: {},
         success: function (response) {
             let rows = response["comments"];
