@@ -24,6 +24,23 @@
     />
 
     <script>
+        $(document).ready(function () {
+            show_comment();
+            let isOpen = false;
+            $(".arrow-button").on("click", function () {
+                if (isOpen == false) {
+                    $(".member-card-back").fadeIn(500);
+                    isOpen = true;
+                } else {
+                    $(".member-card-back").fadeOut(500);
+                    isOpen = false;
+                }
+
+                let offset = $(".member-card-back").offset();
+                $("html, body").animate({scrollTop: offset.top}, 1000);
+            });
+        });
+
         function save_comment() {
             let name = $("#comment-name").val();
             let comment = $("#comment").val();
@@ -64,28 +81,6 @@
             })
         }
        </script>
-
-
-    <script>
-        
-
-        $(document).ready(function () {
-            show_comment();
-            let isOpen = false;
-            $(".arrow-button").on("click", function () {
-                if (isOpen == false) {
-                    $(".member-card-back").fadeIn(500);
-                    isOpen = true;
-                } else {
-                    $(".member-card-back").fadeOut(500);
-                    isOpen = false;
-                }
-
-                let offset = $(".member-card-back").offset();
-                $("html, body").animate({scrollTop: offset.top}, 1000);
-            });
-        });
-    </script>
     
     <title>🌱김태연 페이지🌱</title>
 </head>
@@ -126,45 +121,48 @@
         </div>
     </div>
     <div class="member-card-back">
-        <div class="card-top"></div>
-        <div class="mbti">
-            <div class="mbti-title">💜MBTI💜</div>
-            <div class="mbti-subtitle">
-                <div class="mbti-mymbti">ISTP🔧</div>
-                <div class="mbti-mymbti-sub">만능 재주꾼, 장인</div>
+        <div class="content-wrap">
+            <div class="card-top"></div>
+            <div class="mbti">
+                <div class="mbti-title">💜MBTI💜</div>
+                <div class="mbti-subtitle">
+                    <div class="mbti-mymbti">ISTP🔧</div>
+                    <div class="mbti-mymbti-sub">만능 재주꾼, 장인</div>
+                </div>
+                <div class="mbti-desc">
+                    <p>
+                    감정적이지 않고 차분하고 침착하며 때로는 냉정한 성격으로 보일 수 있습니다.
+                    <p>실용적이고 기계적 문제를 쉽게 해결할 수 있습니다.</p>
+                    <p>ISTP 여성은 다른 사람이 와서 문제를 해결하기를 기다리는 경우가 거의 없습니다.</p>
+                    <p>그들은 독립적이고 문제의 원인을 찾는 데 탁월합니다.</p>
+                    <p>위기에 침착하게 대처하고 논리적 분석과 신속하고 신뢰 가능한 해결책에 집중합니다.</p>
+                    <p>ISTP는 모두에게 특별히 따뜻하거나 활달하게 보이지는 않지만, 실제로는 매우 개방적인 친구일 수 있습니다.</p>
+                    </p>
+                </div>
             </div>
-            <div class="mbti-desc">
-                <p>
-                감정적이지 않고 차분하고 침착하며 때로는 냉정한 성격으로 보일 수 있습니다.
-                <p>실용적이고 기계적 문제를 쉽게 해결할 수 있습니다.</p>
-                <p>ISTP 여성은 다른 사람이 와서 문제를 해결하기를 기다리는 경우가 거의 없습니다.</p>
-                <p>그들은 독립적이고 문제의 원인을 찾는 데 탁월합니다.</p>
-                <p>위기에 침착하게 대처하고 논리적 분석과 신속하고 신뢰 가능한 해결책에 집중합니다.</p>
-                <p>ISTP는 모두에게 특별히 따뜻하거나 활달하게 보이지는 않지만, 실제로는 매우 개방적인 친구일 수 있습니다.</p>
-                </p>
+            <div class="pros">
+                <div class="pros-title">💜객관적으로 살펴본 자신의 장점💜</div>
+                <div class="pros-list">
+                    <li style="list-style: none;">✔ 세심하고 추진력이 좋다.</li>
+                    <li style="list-style: none;">✔ 앞뒤가 똑같으며 솔직하다.</li>
+                    <li style="list-style: none;">✔ 자제력과 스트레스에 강하다.</li>
+                </div>
             </div>
+            <div class="my-working-style">
+                <div class="my-working-style-title">
+                    💜협업을 하는 과정에서의 자신의 스타일💜
+                </div>
+                <div class="my-working-style-desc">
+                    <p>부족한 실력으로 열심히 따라가야 하기 때문에 최대한 적극적으로 임하려고 노력하고 있습니다.
+    
+                    <p>어려우니까 나는 안 된다는 생각보다는 팀원들을 믿고 응원하는 팀장으로 함께 나아갑니다! 노조 파이팅🔥</p>
+    
+                    </p>
+                </div>
+            </div>
+            <div class="card-bottom"></div>    
         </div>
-        <div class="pros">
-            <div class="pros-title">💜객관적으로 살펴본 자신의 장점💜</div>
-            <div class="pros-list">
-                <li style="list-style: none;">✔ 세심하고 추진력이 좋다.</li>
-                <li style="list-style: none;">✔ 앞뒤가 똑같으며 솔직하다.</li>
-                <li style="list-style: none;">✔ 자제력과 스트레스에 강하다.</li>
-            </div>
-        </div>
-        <div class="my-working-style">
-            <div class="my-working-style-title">
-                💜협업을 하는 과정에서의 자신의 스타일💜
-            </div>
-            <div class="my-working-style-desc">
-                <p>부족한 실력으로 열심히 따라가야 하기 때문에 최대한 적극적으로 임하려고 노력하고 있습니다.
-
-                <p>어려우니까 나는 안 된다는 생각보다는 팀원들을 믿고 응원하는 팀장으로 함께 나아갑니다! 노조 파이팅🔥</p>
-
-                </p>
-            </div>
-        </div>
-        <div class="card-bottom"></div>
+        
     </div>
     <div class="comment-list">
         <div class="comment-title">

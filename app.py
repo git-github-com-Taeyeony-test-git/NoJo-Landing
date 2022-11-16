@@ -25,6 +25,27 @@ def bin():
 def Taeyeon():
     return render_template("Taeyeon.html")
 
+# index api
+@app.route("/api/index/comment", methods=["POST"])
+def index_comment_post():
+    name_receive = request.form['name_give']
+    comment_receive = request.form['comment_give']
+
+    doc = {
+        'name': name_receive,
+        'comment': comment_receive
+    }
+
+    db.index_comment.insert_one(doc)
+
+    return jsonify({'msg': '등록완료'})
+
+@app.route("/api/index/comment", methods=["GET"])
+def index_comment_get():
+
+    comment_list = list(db.index_comment.find({}, {'_id': False}))
+    return jsonify({'comments': comment_list})
+
 
 # asher api
 @app.route("/api/asher/comment", methods=["POST"])

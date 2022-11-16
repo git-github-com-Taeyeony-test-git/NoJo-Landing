@@ -93,6 +93,10 @@ p {
 .section-1 {
     height: 100vh;
     margin-top: 110px;
+
+    background-image: url("../images//white-crumpled-paper-texture-for-background.jpg");
+
+    background-size: cover;
 }
 
 .section-1 .team-card-container {
@@ -103,7 +107,6 @@ p {
 }
 
 .section-1 .team-card-container .team-card-item {
-    background-image: url("../images//white-crumpled-paper-texture-for-background.jpg");
     width: 100%;
 
     display: flex;
@@ -180,6 +183,8 @@ p {
 
 .section-2 {
     height: 100vh;
+    background-image: url("../images/hd-wallpaper-gc8a145490_1280.jpg");
+    background-size: cover;
 }
 
 .section-2 .member-card-container {
@@ -199,8 +204,10 @@ p {
     background-color: #ffffff;
     width: 47%;
     height: 18rem;
+    /*
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
-    border: 1px solid lightblue;
+    */
+    border: 1px solid lightgray;
     margin-bottom: 2rem;
     padding: 1rem;
 
@@ -305,7 +312,7 @@ p {
     border-radius: 25px;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     box-sizing: border-box;
-    background: white;
+    border: 2px solid #964b00;
 
     display: flex;
     flex-direction: column;
@@ -422,7 +429,40 @@ p {
     }
 
     .member-card-item-content-comment {
-        font-size: 0.9rem;
+        font-size: 0.9rem !important;
+    }
+
+    .section-3 .comment-list {
+        background-image: none;
+        border: 2px solid #964b00;
+    }
+
+    .comment-title {
+        padding: 1rem;
+    }
+
+    .comment-title .title {
+        font-size: 1.5rem;
+    }
+
+    .comment-input .comment-name-input {
+        padding: 0.5rem;
+    }
+
+    .comment-input textarea {
+        padding: 0.5rem;
+    }
+
+    .comment-list-data {
+        padding: 0.5rem;
+    }
+
+    .comment-list-data .comment-list-data-name {
+        font-size: 0.825rem;
+    }
+
+    .comment-list-data .comment-list-data-content {
+        font-size: 0.75rem;
     }
 
     .email,

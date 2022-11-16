@@ -5,6 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        <!-- favicon -->
+        <link
+            rel="shortcut icon"
+            href="../static/index-static/images/banner-rtan.png"
+        />
+
+        <!-- bootstrap -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -23,9 +30,270 @@
             rel="stylesheet"
         />
 
-        <title>노조소개</title>
+        <link rel="stylesheet" href="../static/index-static/styles/index.css" />
+        <script defer src="../static/index-static/js/index.js"></script>
+        <title>노조</title>
     </head>
     <body>
-    <div>123</div>
+        <div class="index-btn">
+            <button id="page-btn">
+                <img
+                    src="../static/index-static/images/free-icon-down-6364328 (1).png"
+                    alt="arrow-btn"
+                />
+            </button>
+        </div>
+
+        <div class="header">
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-xxl navbar-brand-wrap">
+                    <a class="navbar-brand" href="/">노조</a>
+                </div>
+            </nav>
+        </div>
+        <div id="section-1" class="section-1">
+            <div class="container-xxl team-card-container">
+                <div class="team-card-item">
+                    <div class="team-card-item-profile">
+                        <img
+                            src="../static/index-static/images/팀소개사진.png"
+                            alt=""
+                        />
+                    </div>
+                    <div class="team-card-item-content">
+                        <div class="team-card-item-content-intro">
+                            <div class="title">
+                                <p>팀 소개</p>
+                            </div>
+                            <div class="content">
+                                <p>
+                                    안녕하세요, B반 1조 팀명 노조 입니다.<br />
+                                    여러분은 노조하면 어떤 생각이 드시나요?<br />
+                                    치열하게 투쟁하는 이미지가 떠오르시면
+                                    맞습니다.<br />
+                                    우리 조는 열정을 가지고 치열하게 코딩과
+                                    싸우겠다는 다짐과 더불어, <br />
+                                    재밌게도 팀원 중 MBTI 'N'유형이 없어서
+                                    이름을 노조라고 짓게 되었습니다. <br />
+                                    (그리고 하나 더! Node.js 의 'N'도 살짝
+                                    가져왔다는 이야기가...:두_눈:)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="team-card-item-content-goal">
+                            <div class="title">
+                                <p>우리 팀의 목표</p>
+                            </div>
+                            <div class="content">
+                                <p>
+                                    성실하게 끝까지 남아 수료 후에도 1인분
+                                    이상하는 개발자가 되자 🔥
+                                </p>
+                            </div>
+                        </div>
+                        <div class="team-card-item-content-character">
+                            <div class="title">
+                                <p>우리 팀의 특징</p>
+                            </div>
+                            <div class="content">
+                                팀 노조는 각각 개성이 다른 멤버들이
+                                모여있지만,<br />
+                                코딩을 상대로 이기자는 마음만은 하나입니다.
+                                <br />
+                                그 끈끈함으로 뭉쳐 서로 당겨주고 밀어주는
+                                팀워크가 노조의 특징입니다. <br />
+                            </div>
+                        </div>
+                        <div class="team-card-item-content-promise">
+                            <div class="title">
+                                <p>우리 팀의 약속</p>
+                            </div>
+                            <div class="content">
+                                <p>
+                                    - 지각하지 않기 <br />
+                                    - 무임승차 금지 <br />
+                                    - 팀 변경 후에도 인사하고 지내기 <br />
+                                    - 입 퇴실 시 잊지 않고 인사하기 <br />
+                                    - 체력 관리 잘하기 <br />
+                                    - 팀 변경 후에도 인사하고 지내기 <br />
+                                    - 망설이지 말고 질문하기 <br />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="section-2" class="section-2">
+            <div class="container-xxl member-card-container">
+                <div
+                    class="member-card-item"
+                    onclick="location.href='/Taeyeon'"
+                >
+                    <div class="member-card-item-logo">
+                        <img
+                            src="../static/index-static/images/sparta-logo.png"
+                            alt="logo"
+                        />
+                    </div>
+                    <div class="member-card-item-profile">
+                        <img
+                            src="../static/Taeyeon-static/img/img.jpg"
+                            alt="profile"
+                        />
+                    </div>
+                    <div class="member-card-item-content">
+                        <div class="member-card-item-content-name">
+                            <p>김태연</p>
+                        </div>
+                        <div class="member-card-item-content-comment">
+                            <p>뭐든 해보고 후회하자</p>
+                        </div>
+                        <div class="member-card-item-content-contact">
+                            <p class="email">
+                                <span>E</span> yeony.728@gmail.com
+                            </p>
+                            <p class="blog"><span>B</span> velog.io/@tae728</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="member-card-item"
+                    onclick="location.href='/JungMin'"
+                >
+                    <div class="member-card-item-logo">
+                        <img
+                            src="../static/index-static/images/sparta-logo.png"
+                            alt="logo"
+                        />
+                    </div>
+                    <div class="member-card-item-profile">
+                        <img
+                            src="../static/JungMin-static/images/Jungmin-image.jpg"
+                            alt="profile"
+                        />
+                    </div>
+                    <div class="member-card-item-content">
+                        <div class="member-card-item-content-name">
+                            <p>변정민</p>
+                        </div>
+                        <div class="member-card-item-content-comment">
+                            <p>배움에 끝이 없고, 먹는것도 끝이없다</p>
+                        </div>
+                        <div class="member-card-item-content-contact">
+                            <p class="email">
+                                <span>E</span> cvy5375@gmail.com
+                            </p>
+                            <p class="blog">
+                                <span>B</span> cvy5375.tistory.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-card-item"></div>
+                <div class="member-card-item" onclick="location.href='/asher'">
+                    <div class="member-card-item-logo">
+                        <img
+                            src="../static/index-static/images/sparta-logo.png"
+                            alt="logo"
+                        />
+                    </div>
+                    <div class="member-card-item-profile">
+                        <img
+                            src="../static/asher-static/images/profile-image.jpg"
+                            alt="profile"
+                        />
+                    </div>
+                    <div class="member-card-item-content">
+                        <div class="member-card-item-content-name">
+                            <p>박현민</p>
+                        </div>
+                        <div class="member-card-item-content-comment">
+                            <p>배움에는 끝이 없다</p>
+                        </div>
+                        <div class="member-card-item-content-contact">
+                            <p class="email">
+                                <span>E</span> devasherpark@gmail.com
+                            </p>
+                            <p class="blog"><span>B</span> ashernotes.net</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-card-item" onclick="location.href='/bin'">
+                    <div class="member-card-item-logo">
+                        <img
+                            src="../static/index-static/images/sparta-logo.png"
+                            alt="logo"
+                        />
+                    </div>
+                    <div class="member-card-item-profile">
+                        <img
+                            src="https://teamsparta.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F929bdce5-041f-4b4f-a844-bbdd1d56f06d%2Fmember.jpg?table=block&id=dbc9d631-8792-4b94-bcaf-38a3552fef26&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=500&userId=&cache=v2"
+                            alt="profile"
+                        />
+                    </div>
+                    <div class="member-card-item-content">
+                        <div class="member-card-item-content-name">
+                            <p>장빈</p>
+                        </div>
+                        <div class="member-card-item-content-comment">
+                            <p>믿지 마라. 내 코드를</p>
+                        </div>
+                        <div class="member-card-item-content-contact">
+                            <p class="email">
+                                <span>E</span> gotigeradm@gmail.com
+                            </p>
+                            <p class="blog">
+                                <span>B</span> gorangcodingstory.tistory.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-card-item member-card-item-rtan">
+                    <div class="rtan-image-container">
+                        <img
+                            src="../static/index-static/images/banner-rtan.png"
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="section-3" class="section-3">
+            <div class="container-xxl comment-container">
+                <div class="comment-list">
+                    <div class="comment-title">
+                        <p class="title">방명록</p>
+                    </div>
+                    <div class="comment-input">
+                        <input
+                            class="comment-name-input"
+                            id="comment-name"
+                            placeholder="이름"
+                        />
+                        <textarea
+                            class="comment-text-input"
+                            name="comment"
+                            id="comment"
+                            cols="30"
+                            rows="5"
+                            placeholder="내용"
+                        ></textarea>
+                        <div class="comment-btn-wrap">
+                            <button
+                                class="comment-btn"
+                                onclick="save_comment()"
+                            >
+                                등록
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        id="comment-list-data-wrap"
+                        class="comment-list-data-wrap"
+                    ></div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

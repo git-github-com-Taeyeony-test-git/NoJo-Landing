@@ -1,16 +1,16 @@
 @font-face {
-    font-family: 'UhBeemysen';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeemysen.woff') format('woff');
+    font-family: "UhBeemysen";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeemysen.woff")
+        format("woff");
     font-weight: normal;
     font-style: normal;
 }
 
 * {
-    font-family: 'UhBeemysen';
+    font-family: "UhBeemysen";
 }
 
 body {
-
     height: 100vh;
     background-color: #f1f3f5;
     margin: 0;
@@ -40,7 +40,7 @@ p {
 .member-card {
     width: 700px;
     height: 100%;
-    background-color: #FBF8EF;
+    background-color: #fbf8ef;
     border-radius: 25px;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
 
@@ -59,13 +59,16 @@ p {
     width: 700px;
     height: 100%;
     display: none;
-    background-color: #FBF8EF;
+    background-color: #fbf8ef;
     border-radius: 25px;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+}
 
+.member-card-back .content-wrap {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
 }
 
 .mbti {
@@ -213,7 +216,7 @@ p {
     border-radius: 25px;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     box-sizing: border-box;
-    background: #FBF8EF;
+    background: #fbf8ef;
 
     display: flex;
     flex-direction: column;
@@ -238,7 +241,7 @@ p {
 .comment-input .comment-name-input {
     width: 30%;
     margin-bottom: 1rem;
-    background: linear-gradient(to bottom, lavender, #FBF8EF);
+    background: linear-gradient(to bottom, lavender, #fbf8ef);
     border: 2px solid lightgray;
     border-radius: 10px;
     padding: 1rem;
@@ -247,7 +250,7 @@ p {
 .comment-input textarea {
     width: 100%;
     resize: none;
-    background: linear-gradient(to top, #FBF8EF, lavender);
+    background: linear-gradient(to top, #fbf8ef, lavender);
     border: 2px solid lightgray;
     border-radius: 10px;
     padding: 1rem;
@@ -289,7 +292,7 @@ p {
     margin: 1rem 0;
     border-radius: 10px;
     padding: 1.25rem;
-    background: linear-gradient(to top, #FBF8EF, lavender);
+    background: linear-gradient(to top, #fbf8ef, lavender);
 }
 
 .comment-list-data {
@@ -301,13 +304,13 @@ p {
 }
 
 .comment-list-data-wrap::-webkit-scrollbar {
-    width: 6px; 
+    width: 6px;
 }
 
 .comment-list-data-wrap::-webkit-scrollbar-thumb {
-    height: 10%; 
-    background: #D6DCFA;
-    
+    height: 10%;
+    background: #d6dcfa;
+
     border-radius: 10px;
 }
 
