@@ -24,8 +24,54 @@
     />
 
     <script>
-        let isOpen = false;
+        function save_comment() {
+            let name = $("#comment-name").val();
+            let comment = $("#comment").val();
+            $.ajax({
+                type: "POST",
+                url: "/api/Taeyeon/comment",
+                data: {name_give:name, comment_give:comment},
+                success: function(response){
+                    alert(response["msg"])
+                    window.location.reload(); 
+                }
+            })
+
+        }
+
+        function show_comment() {
+            $.ajax({
+                type: "GET",
+                url: "/api/Taeyeon/comment",
+                data: {},
+                success: function (response) {
+                    let rows = response['comments'];
+
+                    for (let i = 0; i < rows.length; i++) {
+                        let name = rows[i]['name'];
+                        let comment = rows[i]['comment'];
+
+                        let temp_html = `
+                            <div class="comment-list-data">
+                                <div class="comment-list-data-name">${name}</div>
+                                <div class="comment-list-data-content">${comment}</div>
+                            </div>
+                        `;
+
+                        $("#comment-list-data-wrap").append(temp_html);
+                    }
+                }
+            })
+        }
+       </script>
+
+
+    <script>
+        
+
         $(document).ready(function () {
+            show_comment();
+            let isOpen = false;
             $(".arrow-button").on("click", function () {
                 if (isOpen == false) {
                     $(".member-card-back").fadeIn(500);
@@ -40,7 +86,7 @@
             });
         });
     </script>
-
+    
     <title>🌱김태연 페이지🌱</title>
 </head>
 <body>
@@ -70,7 +116,7 @@
             <p class="blog">📝 velog.io/@tae728</p>
         </div>
         <div class="card-bottom">
-            <span style="color: white">소개보기</span>
+            <span style="color: white">CLICK!</span>
             <button class="arrow-button">
                 <img
                         src="../static/Taeyeon-static/img/next-icon.png"
@@ -89,15 +135,12 @@
             </div>
             <div class="mbti-desc">
                 <p>
-                    감정적이지 않고 차분하고 침착하며 때로는 냉정한 성격으로
-                    보일 수 있습니다.
-                <p style="1.5"></p>
-                실용적이고 기계적 문제를 쉽게 해결할 수 있습니다.<p style="1.5"></p>
-                ISTP 여성은 다른 사람이 와서 문제를 해결하기를 기다리는 경우가 거의 없습니다.<p style="1.5"></p>
-                그들은 독립적이고 문제의 원인을 찾는 데 탁월합니다. <p style="1.5"></p>
-                위기에 침착하게 대처하고 논리적 분석과
-                신속하고 신뢰 가능한 해결책에 집중합니다.<p style="1.5"></p>
-                ISTP는 모두에게 특별히 따뜻하거나 활달하게 보이지는 않지만, 실제로는 매우 개방적인 친구일 수 있습니다.
+                감정적이지 않고 차분하고 침착하며 때로는 냉정한 성격으로 보일 수 있습니다.
+                <p>실용적이고 기계적 문제를 쉽게 해결할 수 있습니다.</p>
+                <p>ISTP 여성은 다른 사람이 와서 문제를 해결하기를 기다리는 경우가 거의 없습니다.</p>
+                <p>그들은 독립적이고 문제의 원인을 찾는 데 탁월합니다.</p>
+                <p>위기에 침착하게 대처하고 논리적 분석과 신속하고 신뢰 가능한 해결책에 집중합니다.</p>
+                <p>ISTP는 모두에게 특별히 따뜻하거나 활달하게 보이지는 않지만, 실제로는 매우 개방적인 친구일 수 있습니다.</p>
                 </p>
             </div>
         </div>
@@ -115,8 +158,8 @@
             </div>
             <div class="my-working-style-desc">
                 <p>부족한 실력으로 열심히 따라가야 하기 때문에 최대한 적극적으로 임하려고 노력하고 있습니다.
-                <p style="1.5"></p>
-                어려우니까 나는 안 된다는 생각보다는 팀원들을 믿고 응원하는 팀장으로 함께 나아갑니다! 노조 파이팅🔥
+
+                <p>어려우니까 나는 안 된다는 생각보다는 팀원들을 믿고 응원하는 팀장으로 함께 나아갑니다! 노조 파이팅🔥</p>
 
                 </p>
             </div>
@@ -142,9 +185,14 @@
                     placeholder="응원 한 마디 !"
             ></textarea>
             <div class="comment-btn-wrap">
-                <button class="comment-btn">등록</button>
-            </div>
-        </div>
+                <button class="comment-btn" onclick="save_comment()">등록</button>
+            </div> 
+         </div>
+            <div
+                    id="comment-list-data-wrap"
+                    class="comment-list-data-wrap"
+            ></div>
+        
     </div>
 </div>
 </body>
