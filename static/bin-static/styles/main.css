@@ -84,6 +84,7 @@ input:focus {
     font-weight: bold;
     font-size: 2rem;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .mbti .mbti-subtitle {

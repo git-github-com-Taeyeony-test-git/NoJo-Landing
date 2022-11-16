@@ -25,9 +25,26 @@ def bin():
 def Taeyeon():
     return render_template("Taeyeon.html")
 
-@app.route("/jiyoung")
-def jiyoung():
-    return render_template("jiyoung.html")
+# index api
+@app.route("/api/index/comment", methods=["POST"])
+def index_comment_post():
+    name_receive = request.form['name_give']
+    comment_receive = request.form['comment_give']
+
+    doc = {
+        'name': name_receive,
+        'comment': comment_receive
+    }
+
+    db.index_comment.insert_one(doc)
+
+    return jsonify({'msg': '등록완료'})
+
+@app.route("/api/index/comment", methods=["GET"])
+def index_comment_get():
+
+    comment_list = list(db.index_comment.find({}, {'_id': False}))
+    return jsonify({'comments': comment_list})
 
 
 # asher api
@@ -49,28 +66,6 @@ def asher_comment_post():
 def asher_comment_get():
 
     comment_list = list(db.asher_comment.find({}, {'_id': False}))
-    return jsonify({'comments': comment_list})
-
-
-# jiyoung api
-@app.route("/api/jiyoung/comment", methods=["POST"])
-def jiyoung_comment_post():
-    name_receive = request.form['name_give']
-    comment_receive = request.form['comment_give']
-
-    doc = {
-        'name': name_receive,
-        'comment': comment_receive
-    }
-
-    db.jiyoung_comment.insert_one(doc)
-
-    return jsonify({'msg': '등록완료'})
-
-@app.route("/api/jiyoung/comment", methods=["GET"])
-def jiyoung_comment_get():
-
-    comment_list = list(db.jiyoung_comment.find({}, {'_id': False}))
     return jsonify({'comments': comment_list})
 
 
@@ -98,7 +93,7 @@ def bin_comment_get():
 
 # JungMin api
 @app.route("/api/JungMin/comment", methods=["POST"])
-def jungmin_comment_post():
+def jungMin_comment_post():
     name_receive = request.form['name_give']
     comment_receive = request.form['comment_give']
 
@@ -107,20 +102,37 @@ def jungmin_comment_post():
         'comment': comment_receive
     }
 
-    db.bin_comment.insert_one(doc)
+    db.JungMin_comment.insert_one(doc)
 
     return jsonify({'msg': '등록완료'})
 
 @app.route("/api/JungMin/comment", methods=["GET"])
 def jungmin_comment_get():
     
-    comment_list = list(db.bin_comment.find({}, {'_id': False}))
+    comment_list = list(db.JungMin_comment.find({}, {'_id': False}))
     return jsonify({'comments': comment_list})
 
 
 # Taeyeon api
+@app.route("/api/Taeyeon/comment", methods=["POST"])
+def Taeyeon_comment_post():
+    name_receive = request.form['name_give']
+    comment_receive = request.form['comment_give']
 
+    doc = {
+        'name': name_receive,
+        'comment': comment_receive
+    }
 
+    db.Taeyeon_comment.insert_one(doc)
+
+    return jsonify({'msg': '등록완료'})
+
+@app.route("/api/JungMin/comment", methods=["GET"])
+def Taeyeon_comment_get():
+    
+    comment_list = list(db.Taeyeon_comment.find({}, {'_id': False}))
+    return jsonify({'comments': comment_list})
 
 
 

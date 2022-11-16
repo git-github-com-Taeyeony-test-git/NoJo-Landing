@@ -1,0 +1,499 @@
+@font-face {
+    font-family: "Tenada";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2")
+        format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Ansungtangmyun-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/Ansungtangmyun-Bold.woff2")
+        format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "KyoboHandwriting2020A";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/KyoboHandwriting2020A.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GangwonEdu_OTFBoldA";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #f1f3f5;
+    margin: 0;
+    padding: 0;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    word-break: break-all;
+}
+
+.index-btn {
+    position: fixed;
+    z-index: 200000;
+    background: transparent;
+    width: 5rem;
+    height: 5rem;
+
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.index-btn button {
+    background: transparent;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.index-btn button img {
+    width: 100%;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header .navbar-brand-wrap {
+    justify-content: center;
+}
+
+.header .navbar-brand {
+    margin: 0;
+    font-size: 3.5rem;
+    font-family: "Tenada";
+    font-weight: bold;
+    text-shadow: 3px 3px red;
+}
+
+.section-1 {
+    height: 100vh;
+    margin-top: 110px;
+
+    background-image: url("../images//white-crumpled-paper-texture-for-background.jpg");
+
+    background-size: cover;
+}
+
+.section-1 .team-card-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-1 .team-card-container .team-card-item {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2rem 0.5rem;
+
+    animation: fadeIn 1s;
+}
+
+.section-1 .team-card-container .team-card-item .team-card-item-profile {
+    width: 48%;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+}
+
+.section-1 .team-card-container .team-card-item .team-card-item-profile img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.section-1 .team-card-container .team-card-item .team-card-item-content {
+    width: 48%;
+
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section-1
+    .team-card-container
+    .team-card-item
+    .team-card-item-content
+    .team-card-item-content-intro,
+.section-1
+    .team-card-container
+    .team-card-item
+    .team-card-item-content
+    .team-card-item-content-goal,
+.section-1
+    .team-card-container
+    .team-card-item
+    .team-card-item-content
+    .team-card-item-content-character,
+.section-1
+    .team-card-container
+    .team-card-item
+    .team-card-item-content
+    .team-card-item-content-promis {
+    margin-bottom: 1.5rem;
+}
+
+.section-1 .team-card-container .team-card-item .team-card-item-content .title {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+    font-family: "GangwonEdu_OTFBoldA";
+}
+
+.section-1
+    .team-card-container
+    .team-card-item
+    .team-card-item-content
+    .content {
+    color: #000000;
+    font-family: "GangwonEdu_OTFBoldA";
+}
+
+.section-2 {
+    height: 100vh;
+    background-image: url("../images/hd-wallpaper-gc8a145490_1280.jpg");
+    background-size: cover;
+}
+
+.section-2 .member-card-container {
+    height: 100%;
+    padding: 2rem 0.5rem;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+}
+
+.section-2 .member-card-container .member-card-item {
+    background-color: #ffffff;
+    width: 47%;
+    height: 18rem;
+    /*
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    */
+    border: 1px solid lightgray;
+    margin-bottom: 2rem;
+    padding: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    transition: all ease 0.5s;
+
+    cursor: pointer;
+}
+
+.section-2 .member-card-container .member-card-item:hover {
+    transform: scale(1.1);
+}
+
+.section-2 .member-card-container .member-card-item-logo {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.section-2 .member-card-container .member-card-item-logo img {
+    width: 5rem;
+}
+
+.section-2 .member-card-container .member-card-item .member-card-item-profile {
+    width: 40%;
+    height: 100%;
+}
+
+.section-2
+    .member-card-container
+    .member-card-item
+    .member-card-item-profile
+    img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.section-2 .member-card-item-content {
+    width: 55%;
+    border-left: 1px solid gold;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-2 .member-card-item-content .member-card-item-content-name {
+    font-weight: bold;
+    font-size: 1.825rem;
+    font-family: "Ansungtangmyun-Bold";
+    margin-bottom: 0.5rem;
+}
+
+.section-2 .member-card-item-content .member-card-item-content-comment {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-2 .member-card-item-content .member-card-item-content-contact span {
+    font-weight: bold;
+}
+
+.member-card-item-rtan {
+    background-color: transparent !important;
+    border: none !important;
+    position: relative;
+}
+
+.rtan-image-container {
+    position: absolute;
+    bottom: 5rem;
+    right: 0rem;
+    animation: rtan-move 3s infinite;
+}
+
+.rtan-image-container img {
+    width: 10rem;
+}
+
+.section-3 {
+    height: 100vh;
+}
+
+.section-3 .comment-container {
+    height: 100%;
+    padding: 2rem 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-3 .comment-list {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    box-sizing: border-box;
+    border: 2px solid #964b00;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-title {
+    text-align: center;
+    font-weight: bold;
+    padding: 2rem;
+}
+
+.comment-title .title {
+    font-size: 2.5rem;
+    font-family: "Tenada";
+}
+
+.comment-input {
+    width: 90%;
+}
+
+.comment-input .comment-name-input {
+    width: 30%;
+    margin-bottom: 1rem;
+    background: none;
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.comment-input textarea {
+    width: 100%;
+    resize: none;
+    background: none;
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.comment-btn-wrap {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment-btn {
+    background: red;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.comment-list-data-wrap {
+    width: 90%;
+    overflow-y: scroll;
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+.comment-list-data {
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    margin: 1rem 0;
+    border-radius: 10px;
+    padding: 1.25rem;
+}
+
+.comment-list-data .comment-list-data-name {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .index-btn {
+        width: 3rem;
+    }
+    .section-1 {
+        height: auto;
+    }
+    .section-1 .team-card-item .team-card-item-profile {
+        width: 100% !important;
+    }
+
+    .section-1 .team-card-item .team-card-item-content {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .section-1 .team-card-item .team-card-item-content .title {
+        font-size: 1.75rem !important;
+    }
+
+    .section-2 {
+        height: auto;
+    }
+
+    .section-2 .member-card-container .member-card-item {
+        width: 100% !important;
+    }
+
+    .section-2
+        .member-card-container
+        .member-card-item
+        .member-card-item-profile
+        img {
+        border-radius: 0%;
+    }
+
+    .member-card-item-content-comment {
+        font-size: 0.9rem !important;
+    }
+
+    .section-3 .comment-list {
+        background-image: none;
+        border: 2px solid #964b00;
+    }
+
+    .comment-title {
+        padding: 1rem;
+    }
+
+    .comment-title .title {
+        font-size: 1.5rem;
+    }
+
+    .comment-input .comment-name-input {
+        padding: 0.5rem;
+    }
+
+    .comment-input textarea {
+        padding: 0.5rem;
+    }
+
+    .comment-list-data {
+        padding: 0.5rem;
+    }
+
+    .comment-list-data .comment-list-data-name {
+        font-size: 0.825rem;
+    }
+
+    .comment-list-data .comment-list-data-content {
+        font-size: 0.75rem;
+    }
+
+    .email,
+    .blog {
+        font-size: 0.75rem;
+    }
+}
+
+@keyframes rtan-move {
+    0% {
+        bottom: 5rem;
+        right: 0px;
+    }
+    50% {
+        bottom: 5rem;
+        right: 50%;
+        transform: rotateY(180deg);
+    }
+    100% {
+        bottom: 5rem;
+        right: 0px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -10%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
