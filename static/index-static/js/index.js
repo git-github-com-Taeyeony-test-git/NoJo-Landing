@@ -66,9 +66,6 @@ function comment_modify(num) {
 
 function comment_modify_form(num, comment) {
 
-    let num_data = num;
-    let comment_data = comment;
-
     let temp_html = `
         <textarea
             class="comment-text-input"
@@ -78,17 +75,18 @@ function comment_modify_form(num, comment) {
             rows="5"
             placeholder="내용"
             
-        >${comment_data}</textarea>
+        >${comment}</textarea>
         <div class="comment-btn-wrap">
-            <button class="comment-btn" onclick="comment_modify(${num_data})">
+            <button class="comment-btn" onclick="comment_modify(${num})">
                 수정
             </button>
         </div>
     `
 
-    $('.test').remove();
-    $('.comment-list-data-btn-wrap').remove();
-    $('.comment-list-data-content').append(temp_html);
+    $('.comment-list-data[' + "data-index=" + '"' + num + '"' + '] .test').remove();
+    $('.comment-list-data[' + "data-index=" + '"' + num + '"' + '] .comment-list-data-btn-wrap').remove();
+    $('.comment-list-data[' + "data-index=" + '"' + num + '"' + '] .comment-list-data-content').append(temp_html);
+
 }
 
 function show_comment() {
@@ -99,6 +97,8 @@ function show_comment() {
         success: function (response) {
             let rows = response["comments"];
 
+            console.log(typeof (rows))
+
             for (let i = 0; i < rows.length; i++) {
                 let name = rows[i]['name'];
                 let comment = rows[i]['comment'];
@@ -107,7 +107,7 @@ function show_comment() {
 
                 // console.log(comment);
                 let temp_html = `
-                    <div class="comment-list-data">
+                    <div class="comment-list-data" data-index=${num}>
                         <div class="comment-list-data-name">${name}</div>
                         <div class="comment-list-data-content"><div class="test">${comment}</div></div>
                         <div class="comment-list-data-btn-wrap">
