@@ -4,7 +4,10 @@
     font-weight: normal;
     font-style: normal;
 }
-* {font-family: 'Ycomputer-Regular';}
+
+* {
+    font-family: 'Ycomputer-Regular';
+}
 
 body {
     height: 100vh;
@@ -20,9 +23,11 @@ p {
 textarea:focus {
     outline: none;
 }
+
 button:focus {
     outline: none;
 }
+
 input:focus {
     outline: none;
 }
@@ -125,6 +130,11 @@ input:focus {
     width: 100%;
     height: 50px;
 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    font-weight: bold;
 }
 
 .card-bottom {
@@ -148,6 +158,7 @@ input:focus {
 .card-bottom .arrow-button img {
     width: 40px;
 }
+
 
 .card-mark {
     height: 70px;
@@ -207,6 +218,26 @@ input:focus {
     align-items: center;
 }
 
+.comment-list .clsbtn-wrap {
+    width: 100%;
+    top : 0;
+    display: flex;
+    justify-content: flex-end !important;
+}
+
+.cls-button {
+    border: none;
+    background: none;
+}
+
+.cls-button img {
+    width: 38;
+}
+
+.comment-list  .cls-button img {
+    width: 40;
+}
+
 
 .comment-title {
     text-align: center;
@@ -228,7 +259,7 @@ input:focus {
     background: none;
     border: none;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
     border-radius: 10px;
     padding: 1rem;
 }
@@ -239,7 +270,7 @@ input:focus {
     background: none;
     border: none;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
     border-radius: 10px;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -269,7 +300,7 @@ input:focus {
 .comment-list-data {
     border: none;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
     margin: 1rem 0;
     border-radius: 10px;
     padding: 1.25rem;
@@ -277,6 +308,25 @@ input:focus {
 
 .comment-list-data .comment-list-data-name {
     font-weight: bold;
+}
+
+.comment-list-data-btn-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.comment-list-data-btn-wrap button {
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 0.75rem;
+    font-weight: bold;
+}
+
+.comment-list-data-btn-wrap .comment-list-data-btn-delete {
+    background-color: gold;
+    color: white;
 }
 
 @media (max-width: 768px) {
