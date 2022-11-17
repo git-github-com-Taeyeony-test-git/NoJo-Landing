@@ -5,9 +5,11 @@ $(document).ready(function () {
     $(".arrow-button").on("click", function () {
         if (isOpen == false) {
             $(".member-card-back").fadeIn(500);
+            document.getElementById('profile_onoff').innerHTML = '소개닫기'
             isOpen = true;
         } else {
             $(".member-card-back").fadeOut(500);
+            document.getElementById('profile_onoff').innerHTML = '소개보기'
             isOpen = false;
         }
 
