@@ -15,7 +15,7 @@ def asher():
 
 @app.route("/JungMin")
 def JungMin():
-    return render_template('Jungmin.html')
+    return render_template('JungMin.html')
 
 @app.route("/bin")
 def bin():
