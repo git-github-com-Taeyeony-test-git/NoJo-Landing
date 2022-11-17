@@ -25,6 +25,10 @@ def bin():
 def Taeyeon():
     return render_template("Taeyeon.html")
 
+@app.route("/jiyoung")
+def jiyoung():
+    return render_template("jiyoung.html")
+
 # index api
 @app.route("/api/index/comment", methods=["POST"])
 def index_comment_post():
@@ -128,13 +132,32 @@ def Taeyeon_comment_post():
 
     return jsonify({'msg': '등록완료'})
 
-@app.route("/api/JungMin/comment", methods=["GET"])
+@app.route("/api/Taeyeon/comment", methods=["GET"])
 def Taeyeon_comment_get():
     
     comment_list = list(db.Taeyeon_comment.find({}, {'_id': False}))
     return jsonify({'comments': comment_list})
 
+# jiyoung api
+@app.route("/api/jiyoung/comment", methods=["POST"])
+def jiyoung_comment_post():
+    name_receive = request.form['name_give']
+    comment_receive = request.form['comment_give']
 
+    doc = {
+        'name': name_receive,
+        'comment': comment_receive
+    }
+
+    db.jiyoung_comment.insert_one(doc)
+
+    return jsonify({'msg': '등록완료'})
+
+@app.route("/api/jiyoung/comment", methods=["GET"])
+def jiyoung_comment_get():
+    
+    comment_list = list(db.jiyoung_comment.find({}, {'_id': False}))
+    return jsonify({'comments': comment_list})
 
 
 
