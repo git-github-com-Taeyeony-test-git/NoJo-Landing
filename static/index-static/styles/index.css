@@ -30,6 +30,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: #f1f3f5;
     margin: 0;
@@ -269,17 +276,19 @@ p {
 .section-2 .member-card-item-content .member-card-item-content-name {
     font-weight: bold;
     font-size: 1.825rem;
-    font-family: "Ansungtangmyun-Bold";
+    font-family: "IBMPlexSansKR-Regular";
     margin-bottom: 0.5rem;
 }
 
 .section-2 .member-card-item-content .member-card-item-content-comment {
     font-size: 1rem;
     margin-bottom: 0.5rem;
+    font-family: "IBMPlexSansKR-Regular";
 }
 
 .section-2 .member-card-item-content .member-card-item-content-contact span {
     font-weight: bold;
+    font-family: "IBMPlexSansKR-Regular";
 }
 
 .member-card-item-rtan {
