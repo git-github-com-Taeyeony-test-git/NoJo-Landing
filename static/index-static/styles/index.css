@@ -182,13 +182,13 @@ p {
 }
 
 .section-2 {
-    height: 100vh;
+    
     background-image: url("../images/hd-wallpaper-gc8a145490_1280.jpg");
     background-size: cover;
 }
 
 .section-2 .member-card-container {
-    height: 100%;
+    
     padding: 2rem 0.5rem;
 
     display: flex;
@@ -304,6 +304,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
 }
 
 .section-3 .comment-list {
