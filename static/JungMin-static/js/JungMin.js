@@ -43,6 +43,9 @@ function show_comment() {
 
                 let temp_html = `
                                 <div class="comment-list-data">
+                                    <button class="comment-btn1" onclick="delet_comment()">
+                                        삭제
+                                    </button>
                                     <div class="comment-list-data-name">${name}</div>
                                     <div class="comment-list-data-content">${comment}</div>
                                 </div>

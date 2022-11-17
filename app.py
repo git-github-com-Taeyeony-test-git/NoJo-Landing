@@ -97,13 +97,15 @@ def bin_comment_get():
 
 # JungMin api
 @app.route("/api/JungMin/comment", methods=["POST"])
-def jungMin_comment_post():
+def JungMin_comment_post():
     name_receive = request.form['name_give']
     comment_receive = request.form['comment_give']
+   
 
     doc = {
         'name': name_receive,
-        'comment': comment_receive
+        'comment': comment_receive,
+            
     }
 
     db.JungMin_comment.insert_one(doc)
@@ -115,6 +117,7 @@ def jungmin_comment_get():
     
     comment_list = list(db.JungMin_comment.find({}, {'_id': False}))
     return jsonify({'comments': comment_list})
+
 
 
 # Taeyeon api
@@ -158,6 +161,7 @@ def jiyoung_comment_get():
     
     comment_list = list(db.jiyoung_comment.find({}, {'_id': False}))
     return jsonify({'comments': comment_list})
+
 
 
 
