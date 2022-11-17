@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
 
-    font-family: 'Poor Story', cursive;
+    font-family: "Poor Story", cursive;
 }
 
 p {
@@ -28,6 +28,8 @@ input:focus {
 .member-card-wrap {
     width: 100%;
     height: 100%;
+    min-height: 850px;
+    min-width: 335px;
 
     display: flex;
     flex-wrap: wrap;
@@ -104,7 +106,6 @@ input:focus {
     font-weight: bold;
     font-size: 2rem;
     margin-bottom: 1rem;
-    
 }
 
 .text {
@@ -131,7 +132,6 @@ input:focus {
 
 .my-music {
     padding: 0 2rem;
-    
 }
 
 .my-music-title {
@@ -170,13 +170,12 @@ input:focus {
 }
 
 .card-mark {
-    height: 70px;
+    width: 10rem;
     margin-top: 2rem;
 }
 
 .card-mark img {
     width: 100%;
-    height: 100%;
     object-fit: cover;
 }
 
@@ -187,7 +186,6 @@ input:focus {
 }
 
 .profile-image img {
-    width: 100%;
     height: 100%;
     border-radius: 25px;
     object-fit: cover;
@@ -212,7 +210,6 @@ input:focus {
     font-weight: bold;
     margin: 2rem 0 1rem 0;
 }
-
 
 .comment-list {
     width: 700px;
@@ -240,8 +237,7 @@ input:focus {
 }
 
 .comment-list .cls-button img {
-    width:35;
-    
+    width: 35;
 }
 
 .comment-title {
@@ -256,7 +252,6 @@ input:focus {
 
 .comment-input {
     width: 90%;
-    
 }
 
 .comment-input .comment-name-input {
