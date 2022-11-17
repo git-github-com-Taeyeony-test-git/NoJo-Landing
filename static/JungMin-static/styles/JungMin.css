@@ -228,6 +228,22 @@ input:focus {
     align-items: center;
 }
 
+.comment-list .clsbtn-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end !important;
+}
+
+.comment-list .cls-button {
+    border: none;
+    background: none;
+}
+
+.comment-list .cls-button img {
+    width:35;
+    
+}
+
 .comment-title {
     text-align: center;
     font-weight: bold;
