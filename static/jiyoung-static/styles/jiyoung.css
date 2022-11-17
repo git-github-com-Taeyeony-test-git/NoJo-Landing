@@ -1,12 +1,13 @@
 @font-face {
-    font-family: 'Ycomputer-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/Ycomputer-Regular.woff2') format('woff2');
+    font-family: "Ycomputer-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/Ycomputer-Regular.woff2")
+        format("woff2");
     font-weight: normal;
     font-style: normal;
 }
 
 * {
-    font-family: 'Ycomputer-Regular';
+    font-family: "Ycomputer-Regular";
 }
 
 body {
@@ -39,6 +40,8 @@ input:focus {
 .member-card-wrap {
     width: 100%;
     height: 100%;
+    min-height: 850px;
+    min-width: 335px;
 
     display: flex;
     flex-wrap: wrap;
@@ -159,15 +162,13 @@ input:focus {
     width: 40px;
 }
 
-
 .card-mark {
-    height: 70px;
+    width: 10rem;
     margin-top: 2rem;
 }
 
 .card-mark img {
     width: 100%;
-    height: 100%;
     object-fit: cover;
 }
 
@@ -178,7 +179,6 @@ input:focus {
 }
 
 .profile-image img {
-    width: 100%;
     height: 100%;
     border-radius: 25px;
     object-fit: cover;
@@ -220,7 +220,7 @@ input:focus {
 
 .comment-list .clsbtn-wrap {
     width: 100%;
-    top : 0;
+    top: 0;
     display: flex;
     justify-content: flex-end !important;
 }
@@ -234,10 +234,9 @@ input:focus {
     width: 38;
 }
 
-.comment-list  .cls-button img {
+.comment-list .cls-button img {
     width: 40;
 }
-
 
 .comment-title {
     text-align: center;
@@ -259,7 +258,7 @@ input:focus {
     background: none;
     border: none;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
     border-radius: 10px;
     padding: 1rem;
 }
@@ -270,7 +269,7 @@ input:focus {
     background: none;
     border: none;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
     border-radius: 10px;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -300,7 +299,7 @@ input:focus {
 .comment-list-data {
     border: none;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
     margin: 1rem 0;
     border-radius: 10px;
     padding: 1.25rem;
