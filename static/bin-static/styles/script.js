@@ -20,11 +20,12 @@ $(document).ready(function () {
 
 function save_comment() {
     let name = $("#comment-name").val();
+    let password = $("#comment-password").val();
     let comment = $("#comment").val();
     $.ajax({
         type: "POST",
         url: "/api/bin/comment",
-        data: { name_give: name, comment_give: comment },
+        data: { name_give: name, password_give: password, comment_give: comment },
         success: function (response) {
             alert(response["msg"])
             window.location.reload();
