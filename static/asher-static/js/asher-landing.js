@@ -30,6 +30,19 @@ function save_comment() {
     })
 }
 
+function comment_delete(num) {
+    $.ajax({
+        type: "POST",
+        url: "/api/asher/comment/delete",
+        data: { num_give: num },
+        success: function (response) {
+            alert(response["msg"])
+            window.location.reload();
+        }
+    })
+
+}
+
 function show_comment() {
     $.ajax({
         type: "GET",
@@ -41,11 +54,15 @@ function show_comment() {
             for (let i = 0; i < rows.length; i++) {
                 let name = rows[i]['name'];
                 let comment = rows[i]['comment'];
+                let num = rows[i]['num'];
 
                 let temp_html = `
                     <div class="comment-list-data">
                         <div class="comment-list-data-name">${name}</div>
                         <div class="comment-list-data-content">${comment}</div>
+                        <div class="comment-list-data-btn-wrap">
+                            <button class="comment-list-data-btn-delete" onclick="comment_delete(${num})">삭제</button>
+                        </div>
                     </div>
                 `;
 
