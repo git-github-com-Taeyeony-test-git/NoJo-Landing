@@ -4,6 +4,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+      <!-- favicon -->
+      <link
+            rel="shortcut icon"
+            href="..\static\Taeyeon-static\img\banner-rtan.png"
+      />
+
     <!-- bootstrap -->
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -67,9 +73,13 @@
                     for (let i = 0; i < rows.length; i++) {
                         let name = rows[i]['name'];
                         let comment = rows[i]['comment'];
+                        let num = rows[i]['num'];
 
                         let temp_html = `
                             <div class="comment-list-data">
+                                <button class="commentcls-btn" onclick="delete_comment(${num})">
+                                    DELETE
+                                </button>
                                 <div class="comment-list-data-name">${name}</div>
                                 <div class="comment-list-data-content">${comment}</div>
                             </div>
@@ -80,6 +90,20 @@
                 }
             })
         }
+
+        function delete_comment(num) {
+            $.ajax({
+                type: "POST",
+                url: "/api/Taeyeon/comment/delete",
+                data: { num_give: num },
+                success: function (response) {
+                    alert(response['msg'])
+                    window.location.reload();
+                }
+            })
+        }
+
+
        </script>
     
     <title>🌱김태연 페이지🌱</title>

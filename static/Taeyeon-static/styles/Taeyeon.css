@@ -293,6 +293,19 @@ p {
     font-weight: bold;
 }
 
+.commentcls-btn {
+    width:10%;
+    background: none;
+    color: #829CFD;
+    border-color: #DCDDDE;
+    border-style: dashed;
+    padding: 0.2rem 0.4rem;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    float: right;
+}
+
 .comment-list-data-wrap {
     width: 90%;
     overflow-y: scroll;
@@ -311,11 +324,13 @@ p {
 }
 
 .comment-list-data {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .comment-list-data-name {
-    font-size: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: dimgrey;
 }
 
 .comment-list-data-wrap::-webkit-scrollbar {

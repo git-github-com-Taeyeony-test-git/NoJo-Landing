@@ -217,10 +217,13 @@ def jungmin_comment_delet():
 def Taeyeon_comment_post():
     name_receive = request.form['name_give']
     comment_receive = request.form['comment_give']
+    num_list = list(db.Taeyeon_comment.find({},{'_id':False}))
+    count = len(num_list) + 1
 
     doc = {
         'name': name_receive,
-        'comment': comment_receive
+        'comment': comment_receive,
+        'num': count
     }
 
     db.Taeyeon_comment.insert_one(doc)
@@ -232,6 +235,12 @@ def Taeyeon_comment_get():
     
     comment_list = list(db.Taeyeon_comment.find({}, {'_id': False}))
     return jsonify({'comments': comment_list})
+
+@app.route("/api/Taeyeon/comment/delete", methods=["POST"])
+def Taeyeon_comment_delete():
+    num_receive = request.form['num_give']
+    db.Taeyeon_comment.delete_one({'num': int(num_receive)})
+    return jsonify({'msg': '또 남겨 주실 거죠? 😊'})
 
 # jiyoung api
 @app.route("/api/jiyoung/comment", methods=["POST"])
