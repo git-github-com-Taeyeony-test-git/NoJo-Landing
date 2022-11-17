@@ -97,6 +97,13 @@ def index_comment_modify():
      
 
 # asher api
+@app.route("/api/asher/intro", methods=["GET"])
+def asher_intro_get():
+
+    intro_list = list(db.member_intro.find({'name': '박현민'}, {'_id': False}))
+    return jsonify({'intros': intro_list})
+
+
 @app.route("/api/asher/comment", methods=["POST"])
 def asher_comment_post():
     name_receive = request.form['name_give']
@@ -157,7 +164,7 @@ def bin_comment_get():
     comment_list = list(db.bin_comment.find({}, {'_id': False}))
     return jsonify({'comments': comment_list})
 
-# bin comment delete
+# bin comment
 @app.route("/api/bin/comment/delete", methods=["POST"])
 def bin_index_comment_delete(): 
     # 글 번호
@@ -169,18 +176,20 @@ def bin_index_comment_delete():
     password_db = db.bin_comment.find_one({'num': int(num_receive)}, {'_id': False});
     password = password_db['password'];
 
-    admin_db = db.bin_comment.find_one({'admin':{}}, {'_id': False});
+    admin_db = db.bin_comment.find_one({'num': int(0)}, {'_id': False});
+    admin_pw_db = admin_db['admin_db'];
 
     # 비밀번호 체크 : 실패하면 메시지리턴
     if (password_receive == password) :
         # return jsonify({'msg': '삭제 실패'})
         db.bin_comment.delete_one({'num': int(num_receive)})
         return jsonify({'msg': '삭제성공'})
-    elif (password_receive == admin_db) :
+    elif (password_receive == admin_pw_db) :
         db.bin_comment.delete_one({'num': int(num_receive)})
         return jsonify({'msg': '주인장 권한으로 삭제성공'})
     else :
         return jsonify({'msg': '삭제 실패'})
+
 
 # JungMin api
 @app.route("/api/JungMin/comment", methods=["POST"])
