@@ -123,10 +123,16 @@ def asher_comment_get():
 def bin_comment_post():
     name_receive = request.form['name_give']
     comment_receive = request.form['comment_give']
+    password_receive = request.form['password_give']
+
+    comment_list = list(db.bin_comment.find({}, {'_id': False}))
+    count = len(comment_list) + 1
 
     doc = {
+        'num': count,
         'name': name_receive,
-        'comment': comment_receive
+        'comment': comment_receive,
+        'password': password_receive
     }
 
     db.bin_comment.insert_one(doc)
@@ -139,6 +145,30 @@ def bin_comment_get():
     comment_list = list(db.bin_comment.find({}, {'_id': False}))
     return jsonify({'comments': comment_list})
 
+# bin comment delete
+@app.route("/api/bin/comment/delete", methods=["POST"])
+def bin_index_comment_delete(): 
+    # 글 번호
+    num_receive = request.form['num_give']
+    # 입력받아 넘긴 비밀번호
+    password_receive = request.form['password_give']
+
+    # db에서 가져온 비밀번호
+    password_db = db.bin_comment.find_one({'num': int(num_receive)}, {'_id': False});
+    password = password_db['password'];
+
+    admin_db = db.bin_comment.find_one({'admin':{}}, {'_id': False});
+
+    # 비밀번호 체크 : 실패하면 메시지리턴
+    if (password_receive == password) :
+        # return jsonify({'msg': '삭제 실패'})
+        db.bin_comment.delete_one({'num': int(num_receive)})
+        return jsonify({'msg': '삭제성공'})
+    elif (password_receive == admin_db) :
+        db.bin_comment.delete_one({'num': int(num_receive)})
+        return jsonify({'msg': '주인장 권한으로 삭제성공'})
+    else :
+        return jsonify({'msg': '삭제 실패'})
 
 # JungMin api
 @app.route("/api/JungMin/comment", methods=["POST"])
