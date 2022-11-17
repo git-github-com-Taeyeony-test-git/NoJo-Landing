@@ -169,18 +169,20 @@ def bin_index_comment_delete():
     password_db = db.bin_comment.find_one({'num': int(num_receive)}, {'_id': False});
     password = password_db['password'];
 
-    admin_db = db.bin_comment.find_one({'admin':{}}, {'_id': False});
+    admin_db = db.bin_comment.find_one({'num': int(0)}, {'_id': False});
+    admin_pw_db = admin_db['admin_db'];
 
     # 비밀번호 체크 : 실패하면 메시지리턴
     if (password_receive == password) :
         # return jsonify({'msg': '삭제 실패'})
         db.bin_comment.delete_one({'num': int(num_receive)})
         return jsonify({'msg': '삭제성공'})
-    elif (password_receive == admin_db) :
+    elif (password_receive == admin_pw_db) :
         db.bin_comment.delete_one({'num': int(num_receive)})
         return jsonify({'msg': '주인장 권한으로 삭제성공'})
     else :
         return jsonify({'msg': '삭제 실패'})
+
 
 # JungMin api
 @app.route("/api/JungMin/comment", methods=["POST"])
