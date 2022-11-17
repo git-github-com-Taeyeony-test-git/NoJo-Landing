@@ -163,8 +163,13 @@ def jungmin_comment_get():
     
     comment_list = list(db.JungMin_comment.find({}, {'_id': False}))
     return jsonify({'comments': comment_list})
-
-
+    
+# JungMin delete
+@app.route("/api/JungMin/comment/delete", methods=["POST"])
+def jungmin_comment_delet():
+    num_receive = request.form['num_give']
+    db.JungMin_comment.delete_one({'num': int(num_receive)})
+    return jsonify({'msg': '삭제성공'})
 
 # Taeyeon api
 @app.route("/api/Taeyeon/comment", methods=["POST"])
