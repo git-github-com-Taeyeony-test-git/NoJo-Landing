@@ -295,6 +295,16 @@ input:focus {
     font-weight: bold;
 }
 
+.comment-btn1 {
+    background: rgb(224, 63, 63);
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    font-weight: bold;
+    float: right;
+}
+
 .comment-list-data-wrap {
     width: 90%;
     overflow-y: scroll;

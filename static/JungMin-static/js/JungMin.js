@@ -40,9 +40,13 @@ function show_comment() {
             for (let i = 0; i < rows.length; i++) {
                 let name = rows[i]['name'];
                 let comment = rows[i]['comment'];
+                let num = rows[i]['num'];
 
                 let temp_html = `
                                 <div class="comment-list-data">
+                                    <button class="comment-btn1" onclick="delete_comment(${num})">
+                                        삭제
+                                    </button>
                                     <div class="comment-list-data-name">${name}</div>
                                     <div class="comment-list-data-content">${comment}</div>
                                 </div>
@@ -50,6 +54,18 @@ function show_comment() {
 
                 $("#comment-list-data-wrap").append(temp_html);
             }
+        }
+    })
+}
+
+function delete_comment(num) {
+    $.ajax({
+        type: "POST",
+        url: "/api/JungMin/comment/delete",
+        data: { num_give: num,},
+        success: function (response) {
+            alert(response["msg"])
+            window.location.reload();
         }
     })
 }
