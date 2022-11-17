@@ -102,7 +102,11 @@ def asher_comment_post():
     name_receive = request.form['name_give']
     comment_receive = request.form['comment_give']
 
+    comment_list = list(db.asher_comment.find({}, {'_id': False}))
+    count = len(comment_list) + 1
+
     doc = {
+        'num': count,
         'name': name_receive,
         'comment': comment_receive
     }
@@ -116,6 +120,14 @@ def asher_comment_get():
 
     comment_list = list(db.asher_comment.find({}, {'_id': False}))
     return jsonify({'comments': comment_list})
+
+@app.route("/api/asher/comment/delete", methods=["POST"])
+def asher_comment_delete(): 
+    # 글 번호
+    num_receive = request.form['num_give']
+
+    db.asher_comment.delete_one({'num': int(num_receive)})
+    return jsonify({'msg': '삭제성공'})
 
 
 # bin api
@@ -164,7 +176,6 @@ def jungmin_comment_get():
     comment_list = list(db.JungMin_comment.find({}, {'_id': False}))
     return jsonify({'comments': comment_list})
     
-# JungMin delete
 @app.route("/api/JungMin/comment/delete", methods=["POST"])
 def jungmin_comment_delet():
     num_receive = request.form['num_give']
