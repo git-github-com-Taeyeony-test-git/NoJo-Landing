@@ -189,11 +189,19 @@ p {
 }
 
 .section-2 {
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 65c524c2bba5fd9c5323bd43c0e5b3b721697078
     background-image: url("../images/hd-wallpaper-gc8a145490_1280.jpg");
     background-size: cover;
 }
 
 .section-2 .member-card-container {
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 65c524c2bba5fd9c5323bd43c0e5b3b721697078
     padding: 2rem 0.5rem;
 
     display: flex;
@@ -313,6 +321,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
 }
 
 .section-3 .comment-list {
