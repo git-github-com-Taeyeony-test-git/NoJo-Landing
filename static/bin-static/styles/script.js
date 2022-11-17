@@ -32,6 +32,20 @@ function save_comment() {
     })
 }
 
+function comment_delete(num) {
+    var password_input = prompt('비밀번호를 입력하세요', '비밀번호');
+    $.ajax({
+        type: "POST",
+        url: "/api/bin/comment/delete",
+        data: { num_give: num, password_give: password_input },
+        success: function (response) {
+            alert(response["msg"])
+            window.location.reload();
+        }
+    })
+
+}
+
 function show_comment() {
     $.ajax({
         type: "GET",
@@ -43,11 +57,16 @@ function show_comment() {
             for (let i = 0; i < rows.length; i++) {
                 let name = rows[i]['name'];
                 let comment = rows[i]['comment'];
+                let password = rows[i]['password'];
+                let num = rows[i]['num'];
 
                 let temp_html = `
-                    <div class="comment-list-data">
+                    <div class="comment-list-data" data-index=${num}>
                         <div class="comment-list-data-name">${name}</div>
-                        <div class="comment-list-data-content">${comment}</div>
+                        <div class="comment-list-data-content"><div class="test">${comment}</div></div>
+                        <div class="comment-list-data-btn-wrap">
+                            <button class="comment-list-data-btn-delete" onclick="comment_delete(${num})">삭제</button>
+                        </div>
                     </div>
                 `;
 
