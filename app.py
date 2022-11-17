@@ -209,9 +209,13 @@ def jiyoung_comment_post():
     name_receive = request.form['name_give']
     comment_receive = request.form['comment_give']
 
+    comment_list = list(db.jiyoung_comment.find({}, {'_id': False}))
+    count=len(comment_list)+1
+
     doc = {
         'name': name_receive,
-        'comment': comment_receive
+        'comment': comment_receive,
+        'num' : count
     }
 
     db.jiyoung_comment.insert_one(doc)
@@ -223,6 +227,14 @@ def jiyoung_comment_get():
     
     comment_list = list(db.jiyoung_comment.find({}, {'_id': False}))
     return jsonify({'comments': comment_list})
+
+@app.route("/api/jiyoung/comment/delete", methods=["POST"])
+def jiyoung_comment_delete():
+    # 글 번호
+    num_receive = request.form['num_give']
+
+    db.jiyoung_comment.delete_one({'num': int(num_receive)})
+    return jsonify({'msg': '삭제성공'})
 
 
 
