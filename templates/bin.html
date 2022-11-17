@@ -4,6 +4,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        <!-- favicon -->
+        <link
+            rel="shortcut icon"
+            href="../static/bin-static/images/favicon.ico"
+        />
+
         <!-- bootstrap -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -153,11 +159,18 @@
                     <p class="title">방명록</p>
                 </div>
                 <div class="comment-input">
-                    <input
-                        class="comment-name-input"
-                        id="comment-name"
-                        placeholder="이름"
-                    />
+                    <div class="name-password-wrap">
+                        <input
+                            class="comment-name-input"
+                            id="comment-name"
+                            placeholder="이름"
+                        />
+                        <input
+                            class="comment-password-input"
+                            id="comment-password"
+                            placeholder="비밀번호"
+                        />
+                    </div>
                     <textarea
                         class="comment-text-input"
                         name="comment"
