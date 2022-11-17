@@ -282,6 +282,17 @@ input:focus {
 }
 
 .comment-list-data-wrap::-webkit-scrollbar {
+    width: 6px;
+}
+
+.comment-list-data-wrap::-webkit-scrollbar-thumb {
+    height: 10%;
+    background: orange;
+
+    border-radius: 10px;
+}
+
+.comment-list-data-wrap::-webkit-scrollbar {
     background: #ffffff;
 }
 
