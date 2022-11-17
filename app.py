@@ -33,10 +33,16 @@ def jiyoung():
 @app.route("/api/index/comment", methods=["POST"])
 def index_comment_post():
     name_receive = request.form['name_give']
+    password_receive = request.form['password_give']
     comment_receive = request.form['comment_give']
 
+    comment_list = list(db.index_comment.find({}, {'_id': False}))
+    count = len(comment_list) + 1
+
     doc = {
+        'num': count,
         'name': name_receive,
+        'password': password_receive,
         'comment': comment_receive
     }
 
@@ -50,6 +56,45 @@ def index_comment_get():
     comment_list = list(db.index_comment.find({}, {'_id': False}))
     return jsonify({'comments': comment_list})
 
+@app.route("/api/index/comment/delete", methods=["POST"])
+def index_comment_delete(): 
+    # 글 번호
+    num_receive = request.form['num_give']
+    # 입력받아 넘긴 비밀번호
+    password_receive = request.form['password_give']
+
+    # db에서 가져온 비밀번호
+    password_db = db.index_comment.find_one({'num': int(num_receive)}, {'_id': False});
+    password = password_db['password'];
+
+    # 비밀번호 체크 : 실패하면 메시지리턴
+    if (password_receive != password) :
+        return jsonify({'msg': '삭제 실패'})
+
+    db.index_comment.delete_one({'num': int(num_receive)})
+    return jsonify({'msg': '삭제성공'})
+
+@app.route("/api/index/comment/modify", methods=["POST"])
+def index_comment_modify():
+    # 글 번호
+    num_receive = request.form['num_give']
+    # 입력받아 넘긴 비밀번호
+    password_receive = request.form['password_give']
+    # 수정된 내용
+    comment_receive = request.form['comment_give']
+
+    # db에서 가져온 비밀번호
+    password_db = db.index_comment.find_one({'num': int(num_receive)}, {'_id': False});
+    password = password_db['password'];
+
+    # 비밀번호 체크 : 실패하면 메시지리턴
+    if (password_receive != password) :
+        return jsonify({'msg': '수정 실패'})
+
+    db.index_comment.update_one({'num': int(num_receive)}, {'$set': {'comment': comment_receive}})
+    return jsonify({'msg': '수정성공'})
+
+     
 
 # asher api
 @app.route("/api/asher/comment", methods=["POST"])

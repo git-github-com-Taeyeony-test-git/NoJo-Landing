@@ -182,13 +182,11 @@ p {
 }
 
 .section-2 {
-    height: 100vh;
     background-image: url("../images/hd-wallpaper-gc8a145490_1280.jpg");
     background-size: cover;
 }
 
 .section-2 .member-card-container {
-    height: 100%;
     padding: 2rem 0.5rem;
 
     display: flex;
@@ -342,6 +340,22 @@ p {
     width: 90%;
 }
 
+.comment-input .name-pawssword-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.comment-input .name-password-wrap .comment-password-input {
+    width: 30%;
+    margin-bottom: 1rem;
+    background: #ffffff;
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
 .comment-input .comment-name-input {
     width: 30%;
     margin-bottom: 1rem;
@@ -398,6 +412,44 @@ p {
 
 .comment-list-data .comment-list-data-name {
     font-weight: bold;
+}
+
+.comment-list-data-btn-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.comment-list-data-btn-wrap button {
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 0.75rem;
+    font-weight: bold;
+}
+
+.comment-list-data-btn-wrap button:first-child {
+    margin-right: 0.5rem;
+}
+
+.comment-list-data-btn-wrap .comment-list-data-btn-modify {
+    background-color: darkcyan;
+    color: white;
+}
+.comment-list-data-btn-wrap .comment-list-data-btn-delete {
+    background-color: red;
+    color: white;
+}
+
+.comment-list-data textarea {
+    width: 100%;
+    resize: none;
+    background: #ffffff;
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border-radius: 10px;
+    margin: 1rem 0;
 }
 
 @media (max-width: 768px) {
@@ -457,6 +509,10 @@ p {
         padding: 0.5rem;
     }
 
+    .comment-input .name-password-wrap .comment-password-input {
+        padding: 0.5rem;
+    }
+
     .comment-input textarea {
         padding: 0.5rem;
     }
@@ -471,6 +527,11 @@ p {
 
     .comment-list-data .comment-list-data-content {
         font-size: 0.75rem;
+    }
+
+    .comment-list-data-btn-wrap button {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.5rem;
     }
 
     .email,
