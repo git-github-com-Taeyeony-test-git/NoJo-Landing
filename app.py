@@ -97,6 +97,13 @@ def index_comment_modify():
      
 
 # asher api
+@app.route("/api/asher/intro", methods=["GET"])
+def asher_intro_get():
+
+    intro_list = list(db.member_intro.find({'name': '박현민'}, {'_id': False}))
+    return jsonify({'intros': intro_list})
+
+
 @app.route("/api/asher/comment", methods=["POST"])
 def asher_comment_post():
     name_receive = request.form['name_give']
@@ -157,7 +164,7 @@ def bin_comment_get():
     comment_list = list(db.bin_comment.find({}, {'_id': False}))
     return jsonify({'comments': comment_list})
 
-# bin comment delete
+# bin comment
 @app.route("/api/bin/comment/delete", methods=["POST"])
 def bin_index_comment_delete(): 
     # 글 번호
