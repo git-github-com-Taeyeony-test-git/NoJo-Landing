@@ -13,9 +13,6 @@ $(document).ready(function () {
         }
     })
 
-    $('#comment-modify').on('click', function () {
-
-    })
 });
 
 function save_comment() {
